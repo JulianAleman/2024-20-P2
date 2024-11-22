@@ -3,6 +3,7 @@
   <img [src]="trainerDetail.imageUrl" [alt]="trainerDetail.name" />
   <p><strong>Age:</strong> {{ trainerDetail.age }}</p>
   <p><strong>About...</strong> {{ trainerDetail.bigSnopsies }}</p>
-  <p><strong>Pokemons:</strong></p>
-  <app-pokemon-list [pokemonList]="trainerDetail.pokemons"></app-pokemon-list>
+  <p *ngFor="let t of trainerDetail.pokemons"><strong>{{t.id}}
+    <img src={{t.imageUrl}} alt="">
+  </strong></p>
 </div>

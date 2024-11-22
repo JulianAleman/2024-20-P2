@@ -1,10 +1,5 @@
 <div>
   <div>
-    <div *ngIf="selected">
-      <app-trainer-detail
-        [trainerDetail]="selectedTrainer"
-      ></app-trainer-detail>
-    </div>
     <table>
       <thead>
         <tr>
@@ -17,10 +12,10 @@
         <tr
           *ngFor="let t of trainers"
           class="row-table"
-          (click)="onSelected(t)"
+          routerLink="/trainers/{{t.id}}"
         >
           <td>
-            <dd>{{ t.name }}</dd>
+            <dd >{{ t.name }}</dd>
           </td>
           <td>
             <img
@@ -31,6 +26,9 @@
           </td>
           <td>
             <dd>{{ t.smallSnopsies }}</dd>
+          </td>
+          <td>
+            <dd></dd>
           </td>
         </tr>
       </tbody>
